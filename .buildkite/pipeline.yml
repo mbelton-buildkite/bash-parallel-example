@@ -1,6 +1,14 @@
 steps:
-  - label: ":console:"
-    command: "script.sh"
-    parallelism: 5
-    agents:
-      queue: "${BUILDKITE_AGENT_META_DATA_QUEUE:-default}"
+  - input: ":robot_face: Choose how many agents to run"
+    fields:
+      - select: "Number of agents to run in parallel:"
+        key: "agent-number"
+        options:
+          - label: "3"
+            value: "3"
+          - label: "5"
+            value: "5"
+          - label: "10"
+            value: "10"
+  - label: ":pipeline: Define pipeline"
+    command: .buildkite/pipeline.sh | buildkite-agent pipeline upload
