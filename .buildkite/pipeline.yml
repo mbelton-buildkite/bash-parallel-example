@@ -11,4 +11,4 @@ steps:
           - label: "10"
             value: "10"
   - label: ":pipeline: Define pipeline"
-    command: .buildkite/pipeline.sh | buildkite-agent pipeline upload
+    command: sh .buildkite/pipeline.sh | buildkite-agent pipeline upload
