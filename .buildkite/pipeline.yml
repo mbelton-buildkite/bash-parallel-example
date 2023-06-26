@@ -1,5 +1,5 @@
 steps:
-  - input: ":robot_face: Choose how many agents to run"
+  - block: ":robot_face: Choose how many agents to run"
     fields:
       - select: "Number of agents to run in parallel:"
         key: "agent-number"
